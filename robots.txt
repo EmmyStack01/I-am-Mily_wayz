@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://emmystack01.github.io/I-am-Mily_wayz/sitemap.xml

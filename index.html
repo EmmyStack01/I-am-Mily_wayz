@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mily wayz | Digital Business Card</title>
+    
+    <link rel="stylesheet" href="style.css">    
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="icon" href="favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon_io/favicon-32x32.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="manifest" href="favicon_io/site.webmanifest">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <meta name="description" content="Connect with Mily wayz, an Independent Music Artist. View my playlist, social links, and contact information.">
+    <link rel="canonical" href="https://emmystack01.github.io/I-am-Mily_wayz/">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Mily wayz">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Mily wayz - Digital Card">
+    <meta property="og:description" content="Professional links and contact info for Mily wayz.">
+    <meta property="og:url" content="https://emmystack01.github.io/I-am-Mily_wayz/">
+    <meta property="og:image" content="https://emmystack01.github.io/I-am-Mily_wayz/og-image.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mily wayz | Digital Card">
+    <meta name="twitter:image" content="https://emmystack01.github.io/I-am-Mily_wayz/og-image.png">
+    <meta name="twitter:description" content="Professional links and contact info for Mily wayz.">
+
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="type-writing.js" as="script">
+    <link rel="preload" href="pop.js" as="script">
+    <link rel="preload" href="qrcode.js" as="script">
+
+    <style>
+        /* IMPORTANT: This ensures the Vanta background stays behind your content */
+        #vanta-canvas {
+            position: fixed; /* Fixes it to the background */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Puts it behind everything */
+        }
+
+        /* Ensure your container is transparent or sits correctly */
+        .container {
+            position: relative;
+            z-index: 1;
+            background: transparent;
+        }
+    </style>
+</head>
+<body>
+    <div id="vanta-canvas"></div>
+
+    <div class="container">
+        <main>
+            <div class="extra-content" style="opacity: 0; transition: opacity 1s ease;">
+                <div class="profile-wrapper">
+                    <img src="profile-picture.png" alt="Profile Picture" class="profile-pic" fetchpriority="high" loading="eager">
+                    <div class="status-dot"></div>
+                </div>
+
+                <h1>Mily wayz</h1>
+                <p class="career">Music Artist</p>
+            </div>
+                <p class="bio" id="typing-bio"></p>
+
+            <div class="extra-content" style="opacity: 0; transition: opacity 1s ease;">
+                <div class="socials">
+                    <a href="https://x.com/likeitzmilli" target="_blank" rel="noopener noreferrer nofollow"><i class="ri-twitter-x-fill"></i></a>
+                    <a href="https://www.instagram.com/mily_wayz" target="_blank" rel="noopener noreferrer nofollow"><i class="ri-instagram-fill"></i></a>
+                    <a href="https://www.facebook.com/Milywayz" target="_blank" rel="noopener noreferrer nofollow"><i class="ri-facebook-fill"></i></a>
+                    <a href="https://www.threads.com/@mily_wayz" target="_blank" rel="noopener noreferrer nofollow"><i class="ri-threads-fill"></i></a>
+                </div><br>
+
+                <a href="https://open.spotify.com/playlist/688fRldMfgdzQlo3IwfYl5" target="_blank" rel="noopener noreferrer nofollow" class="hover-button link-card links-gap">
+                    <div class="button-content">
+                        <div class="state-hover">
+                            <span class="arrow">→</span> 
+                            <span class="text">Listen</span>
+                        </div>
+                        <div class="state-default">
+                            <span class="text">My Spotify Playlist</span>
+                        </div>
+                    </div>
+                </a><br><br>
+
+                <div class="links-gap">
+                    <h2 class="linkshead">______Not yet active______</h2>
+                    <a href="https://millise1.github.io/Mily_wayz_website/" target="_blank" rel="noopener noreferrer nofollow" class="link-card">Checkout My Website</a>
+                    <a href="https://www.bandsintown.com/a/15621267" target="_blank" rel="noopener noreferrer nofollow" class="link-card">View My Bandsintown FanPage</a>
+                    <a href="https://tiktok.com/@mily_wayz" target="_blank" rel="noopener noreferrer nofollow" class="link-card">Mily wayz Tiktok</a>
+                    <a href="https://www.youtube.com/@likeitzmilli" target="_blank" rel="noopener noreferrer nofollow" class="link-card">Mily wayz YouTube</a>
+                </div>
+
+                    
+                <!--SAVE CONTACT-->
+                <button class="vcard-btn" onclick="downloadVCard()">💾 Save Contact</button>
+                <!--SHARE PROFILE-->
+                <button class="share-btn" onclick="shareProfile()">
+                    <i class="ri-share-forward-line"></i> Share Profile
+                </button>
+                <!--QR CODE-->
+                <button class="qr-trigger" onclick="toggleQR()">
+                    <i class="ri-qr-code-line"></i> Show My QR
+                </button>
+
+                <div id="qr-modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close" onclick="toggleQR()">&times;</span>
+                        <h2>Scan to Connect</h2>
+                        <div id="qrcode"></div> </div>
+                </div> 
+            </div>          
+        </main>
+            
+        <footer>
+            <div class="extra-content" style="opacity: 0; transition: opacity 1s ease;">
+                <div class="site-footer">
+                    <p class="copyright">&copy; <span id="year"></span> Mily wayz. All Rights Reserved.</p>
+                    <p class="branding">
+                        Built by <a href="https://emmystack01.github.io/EmmySTACK01/" target="_blank" rel="noopener nofollow">Emmy STACK01</a>
+                    </p>
+                </div>
+            </div>    
+        </footer>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
+    <script>
+         // Use window.onload to make sure everything is ready
+        VANTA.FOG({
+            el: "#vanta-canvas",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            // Adjusted for visible movement:
+            highlightColor: 0x222222,  // Lifted slightly from #111111 to see the motion
+            midtoneColor: 0x111111,    // Your card-bg color
+            lowlightColor: 0x000000,   // Pure black
+            baseColor: 0x000000,       // Pure black
+            blurFactor: 0.70,          // Lowered slightly to make the shapes more defined
+            speed: 2.50,               // Increased speed so you can actually see it drifting
+            zoom: 1.30
+        })
+
+        /* SAVE CONTACT */
+        function downloadVCard() {
+            // We join the lines with \r\n to ensure every phone recognizes the new line
+            const vcardData = [
+                "BEGIN:VCARD",
+                "VERSION:3.0",
+                "FN:Mily wayz",
+                "TITLE:Music Artist",
+                "EMAIL;TYPE=INTERNET,WORK:wezuduemoih@gmail.com",
+                "TEL;TYPE=WORK,CELL,VOICE:+2348149595068",
+                "URL:https://millise1.github.io/Mily_wayz_website/",
+                "END:VCARD"
+            ].join("\r\n");
+
+            const blob = new Blob([vcardData], { type: 'text/vcard;charset=utf-8' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            
+            // Using a simple filename without spaces is safer for mobile downloads
+            a.download = 'Mily_wayz.vcf';
+            a.href = url;
+            a.click();
+            
+            // Clean up
+            setTimeout(() => window.URL.revokeObjectURL(url), 100);
+        }
+
+        /*SHARE PROFILE*/
+        async function shareProfile() {
+            const shareData = {
+                title: document.title,
+                text: 'Check out this professional profile!',
+                url: window.location.href
+            };
+
+            try {
+                if (navigator.share) {
+                    await navigator.share(shareData);
+                } else {
+                    // Fallback for browsers that don't support Web Share API
+                    await navigator.clipboard.writeText(window.location.href);
+                    alert('Link copied to clipboard!');
+                }
+            } catch (err) {
+                console.log('Error sharing:', err);
+            }
+        }
+        /*AUTO-CHANGE-YEAR*/
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+<script src="type-writing.js"></script>
+<script src="pop.js"></script>
+<script src="qrcode.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script><!--QR CODE-->
+</body>
+</html>

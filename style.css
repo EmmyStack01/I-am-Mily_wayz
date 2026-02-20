@@ -1,0 +1,318 @@
+:root {
+            --primary-bg: #000000;
+            --card-bg: #111111;
+            --text-main: #ffffff;
+            --accent-color: #c9bf0a;
+            --button-hover: #8a2be2;
+            --royal-purple: #6a0dad;
+        }
+
+        body {
+            font-family: 'Montserrat';
+            background-color: var(--primary-bg);
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+       .container {
+            width: 100%;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        /* Profile Section */
+        .profile-wrapper {
+            width: 150px; /* Set size here once */
+            height: 150px;
+            margin: 0 auto 20px;
+            position: relative;
+        }
+
+        .profile-pic {
+            width: 100%;  /* Image will always match the wrapper */
+            height: 100%;
+            border-radius: 50%; /* This creates the circle */
+            object-fit: cover; /* This is the MAGIC line: it crops the photo instead of stretching it */  
+            object-position: center; /* Centers the face */
+            border: 3px solid var(--accent-color); /* Adds a professional border */
+        }
+
+        /* Live Status Pulse */
+        .status-dot {
+            position: absolute;
+            /* Adjust these values to nudge the dot along the curve */
+            bottom: 8px;   
+            right: 12px;  
+            width: 18px;   /* Slightly larger dot looks better with a larger photo */
+            height: 18px;
+            background-color: #22c55e;
+            border-radius: 50%;
+            border: 3px solid var(--primary-bg);
+            z-index: 2;    /* Ensures it stays on top */
+        }
+
+        .status-dot::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #22c55e;
+            border-radius: 50%;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.8; }
+            100% { transform: scale(2.5); opacity: 0; }
+        }
+
+        /* Typography */
+        h1 { font-family: 'Pacifico'; margin: 10px 0 5px; font-weight: 300; }
+        .career { color: var(--accent-color); font-weight: 600; font-size: 0.9rem; text-transform: uppercase; }
+        .bio { font-size: 0.95rem; color: #94a3b8; margin: 15px 0 10px; line-height: 1.5; }
+
+        .socials{
+            margin: 10px; margin-bottom: 15px;
+        }
+        .socials a{
+            text-decoration: none;
+            color: var(--text-main);
+        }
+        .socials i{
+            font-size: 25px;
+        }
+        .socials i:hover{
+            color: #ffffff77;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .linkshead{
+            color: #94a3b8;
+            font-size: 16px;
+            margin: 0;
+        }
+
+
+        /* Buttons */
+        .links-gap { display: flex; flex-direction: column; gap: 15px; }
+
+        .link-card {
+            background-color: rgba(255, 255, 255, 0.137);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            padding: 16px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            transition: transform 0.2s, background-color 0.2s;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .link-card:hover {
+            transform: scale(1.02); /* Very slight zoom */
+            background-color: var(--text-main); /* Inverts the color */
+            color: var(--card-bg);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Silk-smooth transition */
+        }
+
+
+        .hover-button {
+            cursor: pointer;
+            position: relative;
+            overflow: hidden; /* This clips the text sliding in/out */
+        }
+
+        .button-content {
+        display: flex;
+        width: 200%; /* Double width to hold both states side-by-side */
+        height: 100%;
+        transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        /* Start with the Sign up hidden to the left */
+        transform: translateX(-50%); 
+        }
+
+        /* Default state */
+        .state-default {
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        /* Hover state */
+        .state-hover {
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        /* The Magic: When button is hovered, slide the content to the right */
+        .hover-button:hover .button-content {
+        transform: translateX(0%);
+        }
+
+        /* Icon Styling */
+        .icon { font-size: 22px; }
+        .arrow { font-size: 20px; }
+
+
+        /*SAVE CONTACT*/
+        .vcard-btn {
+            margin-top: 30px;
+            background: var(--accent-color);
+            color: var(--primary-bg);
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            border: none;
+            display: inline-block;
+        }
+
+        /*SHARE PROFILE*/
+        .share-btn {
+            margin-top: 15px;
+            background: transparent;
+            color: var(--accent-color);
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            border: 2px solid var(--accent-color);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .share-btn:hover {
+            background: var(--accent-color);
+            color: var(--primary-bg);
+        }
+
+        /*QR CODE*/
+        .qr-trigger{
+            margin-top: 15px;
+            background: transparent;
+            color: var(--accent-color);
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            border: 2px solid var(--accent-color);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0; top: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background-color: var(--container-bg);
+            margin: 15% auto;
+            padding: 25px;
+            border-radius: 20px;
+            width: 250px;
+            text-align: center;
+        }
+
+        .modal-content h2{
+            font-size: 1.1em;
+        }
+
+        .close{
+            cursor: pointer;
+        }
+
+        #qrcode img {
+            margin: 0 auto;
+            border: 10px solid white; /* Ensures scannability on dark themes */
+            border-radius: 10px;
+        }
+
+
+        /*COPYRIGHT & DEVELOPER CREDITS*/
+
+        .site-footer {
+            margin-top: 50px;
+            padding-bottom: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 20px;
+        }
+
+        .copyright {
+            font-size: 0.75rem;
+            color: #94a3b8;
+            margin-bottom: 5px;
+        }
+
+        .branding {
+            font-size: 0.85rem;
+            color: #94a3b8;
+        }
+
+        .branding a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .branding a:hover {
+            text-decoration: underline;
+        }
+
+        
+        /* Animation */
+        /* 1. Define the animation as you have it */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+                filter: blur(5px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+                filter: blur(0);
+            }
+        }
+
+        /* 2. Set the initial state */
+        .extra-content {
+            opacity: 0;
+        }
+
+        /* 3. This class will be added by JavaScript later */
+        .extra-content.show-now {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        /* Keep your delays as they were */
+        .link-card:nth-child(1) { animation-delay: 0.2s; }
+        .link-card:nth-child(2) { animation-delay: 0.4s; }
+        .link-card:nth-child(3) { animation-delay: 0.6s; }
+        .link-card:nth-child(4) { animation-delay: 0.8s; }
+
+        /* Footer appears last */
+        .footer-credits { animation-delay: 1s; }
