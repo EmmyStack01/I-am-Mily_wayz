@@ -57,7 +57,7 @@ If you or your client wish to remove the developer branding for a 100% white-lab
 1. Remove the "Built by Emmy STACK01" footer credit.
 2. Modify the design for specific brand requirements.
 3. Receive a formal Certificate of License for your client records.
-To upgrade your license, please contact: [millise112@gmail.com]
+To upgrade your license, please contact: [hello@emmystack01.com]
 
 ---
 
