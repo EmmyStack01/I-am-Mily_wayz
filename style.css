@@ -7,7 +7,9 @@
             --royal-purple: #6a0dad;
         }
 
-* {font-family: 'Montserrat';}
+        * {
+            font-family: 'Montserrat';
+        }
         body {
             background-color: var(--primary-bg);
             color: var(--text-main);
@@ -224,25 +226,40 @@
             z-index: 1000;
             left: 0; top: 0;
             width: 100%; height: 100%;
-            background-color: rgba(0,0,0,0.8);
-            backdrop-filter: blur(5px);
+            background-color: rgba(0, 0, 0, 0.85); /* Slightly darker for better contrast */
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
         }
 
         .modal-content {
-            background-color: var(--container-bg);
+            background-color: var(--card-bg);
             margin: 15% auto;
             padding: 25px;
             border-radius: 20px;
             width: 250px;
             text-align: center;
+
+            position: relative; /* Allows precise positioning of the close button */
+            border: 1px solid rgba(255, 255, 255, 0.1); /* Matches your link card styling */
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
         }
 
         .modal-content h2{
             font-size: 1.1em;
         }
 
-        .close{
+        .close {
             cursor: pointer;
+            position: absolute;
+            top: 12px;
+            right: 16px;
+            font-size: 24px;
+            color: #94a3b8;
+            transition: color 0.2s ease;
+        }
+
+        .close:hover {
+            color: var(--text-main);
         }
 
         #qrcode {
@@ -323,3 +340,9 @@
 
         /* Footer appears last */
         .footer-credits { animation-delay: 1s; }
+
+        /* Disables all clicks, hovers, and selections during the typewriter animation */
+        body.typing-active {
+            pointer-events: none;
+            user-select: none; /* Optional: stops users from highlighting text while it types */
+        }
