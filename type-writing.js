@@ -3,16 +3,22 @@ const speed = 40; // Speed in milliseconds
 let i = 0;
 
 function typeWriter() {
+    // Add the class at the very start of typing
+    if (i === 0) {
+        document.body.classList.add("typing-active");
+    }
+
     if (i < bioText.length) {
         document.getElementById("typing-bio").innerHTML += bioText.charAt(i);
         i++;
         setTimeout(typeWriter, speed);
     } else {
-        // Find ALL sections with the extra-content class
+        // 1. Remove the unclickable state so everything works again
+        document.body.classList.remove("typing-active");
+
+        // 2. Find ALL sections with the extra-content class
         const sections = document.querySelectorAll(".extra-content");
-        
         sections.forEach(section => {
-            // Adding this class triggers the CSS animation we defined above
             section.classList.add("show-now");
         });
     }
