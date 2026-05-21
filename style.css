@@ -7,8 +7,8 @@
             --royal-purple: #6a0dad;
         }
 
+* {font-family: 'Montserrat';}
         body {
-            font-family: 'Montserrat';
             background-color: var(--primary-bg);
             color: var(--text-main);
             display: flex;
@@ -245,10 +245,17 @@
             cursor: pointer;
         }
 
-        #qrcode img {
-            margin: 0 auto;
-            border: 10px solid white; /* Ensures scannability on dark themes */
-            border-radius: 10px;
+        #qrcode {
+            background-color: #ffffff; /* Forces the white background */
+            padding: 16px;             /* Creates the crucial "Quiet Zone" */
+            display: inline-block;     /* Keeps the container tight around the QR code */
+            border-radius: 10px;        /* Optional: Makes it look a bit cleaner */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Optional: Helps it pop */
+        }
+
+        #qrcode canvas, #qrcode img {
+            display: block;  
+            margin: 0 auto;          /* Prevents weird inline spacing issues */
         }
 
 
