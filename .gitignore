@@ -1,0 +1,7 @@
+keystatic-admin/node_modules/
+keystatic-admin/dist/
+keystatic-admin/.astro/
+keystatic-admin/.wrangler/
+.env
+.env.local
+.DS_Store
