@@ -13,6 +13,9 @@
       "id": "6dd12f0b6c714db492ff56f3e27fa654"
     }
   ],
+  "vars": {
+    "KEYSTATIC_GITHUB_CLIENT_ID": "lv23liOkiGYBg9AJkuo1"
+  },
   "observability": {
     "enabled": false,
     "head_sampling_rate": 1,
