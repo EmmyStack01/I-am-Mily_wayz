@@ -1,1 +1,33 @@
-
+{
+  "profile": {
+    "name": "Mily wayz",
+    "jobTitle": "Music Artist",
+    "bio": "Independent music artist. Connect for new releases, tour updates, and behind-the-scenes content.",
+    "profilePicture": "/profile-picture.png"
+  },
+  "socials": [
+    { "icon": "ri-twitter-x-fill", "label": "X", "url": "https://x.com/likeitzmilli" },
+    { "icon": "ri-instagram-fill", "label": "Instagram", "url": "https://www.instagram.com/mily_wayz" },
+    { "icon": "ri-facebook-fill", "label": "Facebook", "url": "https://www.facebook.com/Milywayz" },
+    { "icon": "ri-threads-fill", "label": "Threads", "url": "https://www.threads.com/@mily_wayz" }
+  ],
+  "featuredButton": {
+    "url": "https://open.spotify.com/playlist/688fRldMfgdzQlo3IwfYl5",
+    "hoverText": "Listen",
+    "defaultText": "My Spotify Playlist"
+  },
+  "linksHeading": "______Not yet active______",
+  "links": [
+    { "text": "Checkout My Website", "url": "https://millise1.github.io/Mily_wayz_website/" },
+    { "text": "View My Bandsintown FanPage", "url": "https://www.bandsintown.com/a/15621267" },
+    { "text": "Mily wayz Tiktok", "url": "https://tiktok.com/@mily_wayz" },
+    { "text": "Mily wayz YouTube", "url": "https://www.youtube.com/@likeitzmilli" }
+  ],
+  "vcard": {
+    "fullName": "Mily wayz",
+    "title": "Music Artist",
+    "email": "wezuduemoih@gmail.com",
+    "phone": "+2348149595068",
+    "website": "https://millise1.github.io/Mily_wayz_website/"
+  }
+}
