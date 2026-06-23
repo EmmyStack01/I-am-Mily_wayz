@@ -11,7 +11,7 @@ export default config({
       name: 'Mily Wayz — Digital Business Card',
       mark: () => (
         <img
-          src="https://emmystack01.github.io/I-am-Mily_wayz/profile-picture.png"
+          src="https://milywayz.wezuduemoih.workers.dev/profile-picture.png"
           alt="Mily Wayz"
           style={{ width: 24, height: 24, borderRadius: '50%', objectFit: 'cover' }}
         />
