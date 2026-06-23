@@ -25,7 +25,7 @@ export default config({
   singletons: {
     card: singleton({
       label: 'Digital Business Card',
-      path: 'data',
+      path: 'keystatic-admin/public/data',
       format: { data: 'json' },
       schema: {
         profile: fields.object({
@@ -39,7 +39,7 @@ export default config({
           }),
           profilePicture: fields.image({
             label: 'Profile Picture',
-            directory: '.',
+            directory: 'keystatic-admin/public',
             publicPath: '/',
           }),
         }, { label: 'Profile' }),
