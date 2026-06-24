@@ -11,9 +11,8 @@ export default config({
     brand: {
       name: 'Mily Wayz — Digital Business Card',
       mark: () => {
-        const [imageSrc, setImageSrc] = React.useState(
-          'https://milywayz.wezuduemoih.workers.dev/profile/profilePicture.png'
-        );
+        const PLACEHOLDER = 'https://res.cloudinary.com/dq7dwhxqn/image/upload/v1782299989/profile-picture-placeholder_yvcbul.jpg';
+        const [imageSrc, setImageSrc] = React.useState(PLACEHOLDER);
 
         React.useEffect(() => {
           fetch('https://milywayz.wezuduemoih.workers.dev/data.json')
