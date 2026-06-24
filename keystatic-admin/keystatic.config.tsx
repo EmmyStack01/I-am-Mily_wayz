@@ -57,8 +57,8 @@ export default config({
           }),
           profilePicture: fields.image({
             label: 'Profile Picture',
-            directory: 'keystatic-admin/public',
-            publicPath: '/',
+            directory: 'keystatic-admin/public/profile',
+            publicPath: '/profile/',
           }),
         }, { label: 'Profile' }),
 
