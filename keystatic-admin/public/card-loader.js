@@ -25,9 +25,10 @@ function renderCard(data) {
 
     // PROFILE IMAGE
     const img = document.querySelector('.profile-pic');
-    if (img && profile?.profilePicture) {
-        img.src = profile.profilePicture;
-        img.alt = `${profile.name} – ${profile.jobTitle} profile photo`;
+    if (img) {
+        const PLACEHOLDER = 'https://res.cloudinary.com/dq7dwhxqn/image/upload/v1782299989/profile-picture-placeholder_yvcbul.jpg';
+        img.src = profile?.profilePicture || PLACEHOLDER;
+        img.alt = `${profile?.name || 'User'} profile photo`;
     }
 
     // NAME
