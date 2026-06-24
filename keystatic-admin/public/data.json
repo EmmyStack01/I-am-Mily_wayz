@@ -3,7 +3,7 @@
     "name": "Mily wayz",
     "jobTitle": "Music Artist",
     "bio": "Independent music artist. Connect for new releases, tour updates, and behind-the-scenes content.",
-    "profilePicture": "/profile/profilePicture.jpg"
+    "profilePicture": "/profile/profilePicture.png"
   },
   "socials": [
     {
@@ -54,6 +54,8 @@
   "vcard": {
     "fullName": "Mily wayz",
     "title": "Music Artist",
-    "phone": "+2348149595068"
+    "email": "wezuduemoih@gmail.com",
+    "phone": "+2348149595068",
+    "website": "https://millise1.github.io/Mily_wayz_website/"
   }
 }
