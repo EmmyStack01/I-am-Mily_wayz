@@ -1,3 +1,4 @@
+import React from 'react';
 import { config, fields, singleton } from '@keystatic/core';
 
 export default config({
@@ -9,13 +10,31 @@ export default config({
   ui: {
     brand: {
       name: 'Mily Wayz — Digital Business Card',
-      mark: () => (
-        <img
-          src="https://milywayz.wezuduemoih.workers.dev/profile/profilePicture.png"
-          alt="Mily Wayz"
-          style={{ width: 24, height: 24, borderRadius: '50%', objectFit: 'cover' }}
-        />
-      ),
+      mark: () => {
+        const [imageSrc, setImageSrc] = React.useState(
+          'https://milywayz.wezuduemoih.workers.dev/profile/profilePicture.png'
+        );
+
+        React.useEffect(() => {
+          fetch('https://milywayz.wezuduemoih.workers.dev/data.json')
+            .then(r => r.json())
+            .then(d => {
+              if (d.profile?.profilePicture) {
+                const filename = d.profile.profilePicture.split('/').pop();
+                setImageSrc(`https://milywayz.wezuduemoih.workers.dev/profile/${filename}`);
+              }
+            })
+            .catch(() => {});
+        }, []);
+
+        return (
+          <img
+            src={imageSrc}
+            alt="Mily Wayz"
+            style={{ width: 24, height: 24, borderRadius: '50%', objectFit: 'cover' }}
+          />
+        );
+      },
     },
     navigation: {
       'Digital Business Card': ['card'],
