@@ -104,6 +104,13 @@ export default config({
           phone: fields.text({ label: 'Phone' }),
           website: fields.url({ label: 'Website' }),
         }, { label: 'Save Contact (vCard) Details' }),
+
+        footerSpacer: fields.text({
+          label: 'Built by Emmy STACK01',
+          description: 'This field is intentionally unused — keeps the dashboard scroll bug from hiding real fields.',
+          validation: { isRequired: false },
+          defaultValue: '',
+        }),
       },
     }),
   },
