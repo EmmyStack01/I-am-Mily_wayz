@@ -50,11 +50,13 @@ function renderCard(data) {
     // SOCIAL ICONS
     const socialsWrap = document.querySelector('.socials');
     if (socialsWrap && Array.isArray(socials)) {
-        socialsWrap.innerHTML = socials.map(s => `
-            <a href="${escapeAttr(s.url)}" target="_blank" rel="noopener noreferrer me" aria-label="${escapeAttr(profile?.name || '')} on ${escapeAttr(s.label || '')}">
-                <i class="${escapeAttr(s.icon)}"></i>
-            </a>
-        `).join('');
+        socialsWrap.innerHTML = socials
+            .filter(s => s.enabled !== false) // skip toggled-off entries
+            .map(s => `
+                <a href="${escapeAttr(s.url)}" target="_blank" rel="noopener noreferrer me" aria-label="${escapeAttr(profile?.name || '')} on ${escapeAttr(s.label || '')}">
+                    <i class="${escapeAttr(s.icon)}"></i>
+                </a>
+            `).join('');
     }
 
     // FEATURED BUTTON (e.g. Spotify)
