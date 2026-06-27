@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mily wayz Launchpad</title>
+
+<!-- Keep this site out of search results — it's an internal handoff page, not public content -->
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<link rel="icon" href="https://emmystack01.com/mily-wayz/favicon_io/favicon.ico" type="image/x-icon">
+<link rel="icon" href="https://emmystack01.com/mily-wayz/favicon_io/favicon-32x32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" sizes="180x180" href="https://emmystack01.com/mily-wayz/favicon_io/apple-touch-icon.png">
+<link rel="manifest" href="https://emmystack01.com/mily-wayz/favicon_io/site.webmanifest">
+
+<style>
+/* ════════════════════════════════════════════════
+   THEME TOKENS — edit these per project.
+   Everything below derives from these variables.
+════════════════════════════════════════════════ */
+:root {
+  /* Color */
+  --bg:        #0E0F11;   /* page background */
+  --surface:   #17181B;   /* card background */
+  --surface-2: #1F2024;   /* hover / secondary surface */
+  --border:    #2A2B30;
+  --text:      #F2F1ED;
+  --text-dim:  #9A9A9F;
+  --accent:    #c9bf0a;   /* swap this single value to retheme the whole page */
+  --accent-text: #14130C;
+
+  /* Type */
+  --font-display: 'Pacifico';
+  --font-body: 'Montserrat';
+
+  /* Shape */
+  --radius: 10px;
+  --radius-lg: 16px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+}
+
+.sheet {
+  width: 100%;
+  max-width: 460px;
+}
+
+/* ── Logo slot ───────────────────────────── */
+.logo-slot {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.logo-slot span {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+  color: var(--text);
+}
+
+/* ── Section card ────────────────────────── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  margin-bottom: 20px;
+}
+
+.card-eyebrow {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-dim);
+  margin: 0 0 14px;
+}
+
+/* ── Buttons ─────────────────────────────── */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 15px 20px;
+  border-radius: var(--radius);
+  font-size: 0.98rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid var(--border);
+  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+}
+
+.btn:active { transform: scale(0.985); }
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--accent-text);
+  border-color: var(--accent);
+}
+.btn-primary:hover { filter: brightness(1.06); }
+
+.btn-secondary {
+  background: var(--surface-2);
+  color: var(--text);
+}
+.btn-secondary:hover { border-color: var(--accent); }
+
+/* ── URL row ─────────────────────────────── */
+.url-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+
+.url-row code {
+  flex: 1;
+  font-family: 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 0.82rem;
+  word-break: break-all;
+  background: var(--surface-2);
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
+
+.copy-btn {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+.copy-btn:hover { border-color: var(--accent); color: var(--accent); }
+.copy-btn svg { width: 15px; height: 15px; }
+
+/* ── QR block ────────────────────────────── */
+.qr-wrap {
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.qr-wrap img {
+  width: 96px;
+  height: 96px;
+  border-radius: 8px;
+  background: #fff;
+  padding: 6px;
+  display: block;
+}
+
+.qr-caption {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  line-height: 1.5;
+}
+
+.qr-caption a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.qr-caption a:hover { text-decoration: underline; }
+
+/* ── Footer ──────────────────────────────── */
+.footer {
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  margin-top: 28px;
+}
+
+.footer a {
+  color: inherit;
+  text-decoration: none;
+}
+.footer a:hover { color: var(--accent); }
+
+@media (max-width: 380px) {
+  .card { padding: 22px 18px; }
+}
+</style>
+</head>
+<body>
+
+<div class="sheet">
+
+  <!-- LOGO SLOT — swap the <img> src, or delete it and keep just the text -->
+  <div class="logo-slot">
+    <span>Mily wayz-Digital Business Card</span>
+  </div>
+
+  <!-- PRODUCTION -->
+  <div class="card">
+    <p class="card-eyebrow">Production</p>
+    <a class="btn btn-primary" href="https://emmystack01.com/mily-wayz" target="_blank" rel="noopener">
+      View Live Site
+    </a>
+
+    <div class="url-row">
+      <code id="prod-url">https://emmystack01.com/mily-wayz</code>
+      <button class="copy-btn" onclick="copyUrl('prod-url', this)" aria-label="Copy production URL">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2"/>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="qr-wrap">
+      <!-- QR auto-generated from the production URL above — no JS dependency, just a query param -->
+      <img id="qr-img" alt="QR code linking to the live site" src="qr-code.png">
+      <p class="qr-caption">Scan to open on mobile, or <a href="qr-code.png" download>download the QR</a>.</p>
+    </div>
+  </div>
+
+  <!-- MANAGEMENT -->
+  <div class="card">
+    <p class="card-eyebrow">Management</p>
+    <a class="btn btn-secondary" href="https://milywayz.wezuduemoih.workers.dev/keystatic" target="_blank" rel="noopener">
+      Edit Live Site
+    </a>
+  </div>
+
+  <p class="footer">Internal handoff page — <a>not indexed, not public</a></p>
+
+</div>
+
+<script>
+
+  function copyUrl(id, btn) {
+    const text = document.getElementById(id).textContent.trim();
+    navigator.clipboard.writeText(text).then(() => {
+      const original = btn.innerHTML;
+      btn.innerHTML = '✓';
+      setTimeout(() => { btn.innerHTML = original; }, 1200);
+    });
+  }
+</script>
+
+</body>
+</html>
