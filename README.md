@@ -40,7 +40,7 @@ This digital asset is engineered using a Git-backed, modern framework architectu
 ├── wrangler.jsonc          # Cloudflare deployment settings
 ├── package.json            # Node project metadata and dependencies
 └── package-lock.json       # Strict lockfile for production dependencies
-
+```
 ---
 
 Built with ⚡️ by Emmy STACK01
