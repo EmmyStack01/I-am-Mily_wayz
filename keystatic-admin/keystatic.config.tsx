@@ -57,8 +57,9 @@ export default config({
           }),
           profilePicture: fields.image({
             label: 'Profile Picture',
-            directory: 'keystatic-admin/public/profile',
-            publicPath: '/profile/',
+            directory: 'keystatic-admin/public',
+            publicPath: '/mily-wayz/',
+            //ADDED /mily-wayz/ PATH SO PROFILE PICTURE WILL SHOW UP ON https://emmystack01.com/mily-wayz, ALSO ADDED IT IN data.json profilePicture
           }),
         }, { label: 'Profile' }),
 
