@@ -58,7 +58,7 @@ export default config({
           profilePicture: fields.image({
             label: 'Profile Picture',
             directory: 'keystatic-admin/public/profile',
-            publicPath: '/profile/',
+            publicPath: '/mily-wayz/profile/', //ADDED /mily-wayz/ PATH SO PROFILE PICTURE WILL SHOW UP ON https://emmystack01.com/mily-wayz, ALSO ADDED IT IN data.json profilePicture
           }),
         }, { label: 'Profile' }),
 
@@ -107,7 +107,7 @@ export default config({
 
         footerSpacer: fields.text({
           label: 'Built by Emmy STACK01',
-          description: 'This field is intentionally unused — keeps the dashboard scroll bug from hiding real fields.',
+          description: 'This field is intentionally unused — keeps the dashboard scroll bug from hiding real fields. So do not input anything here.',
           validation: { isRequired: false },
           defaultValue: '',
         }),
