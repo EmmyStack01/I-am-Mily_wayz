@@ -65,6 +65,11 @@ export default config({
 
         socials: fields.array(
           fields.object({
+            enabled: fields.checkbox({
+              label: 'Show this icon',
+              description: 'Turn off to hide this social link from the card without deleting its setup.',
+              defaultValue: true,
+            }),
             icon: fields.text({
               label: 'Remix Icon class',
               description: 'e.g. ri-instagram-fill — browse icons at remixicon.com',
@@ -74,10 +79,10 @@ export default config({
           }),
           {
             label: 'Social Icons',
-            itemLabel: (props) => props.fields.label.value || 'Social link',
+            itemLabel: (props) =>
+              `${props.fields.enabled.value ? '🟢' : '⚪'} ${props.fields.label.value || 'Social link'}`,
           }
         ),
-
         featuredButton: fields.object({
           url: fields.url({ label: 'Link URL' }),
           hoverText: fields.text({ label: 'Hover text (e.g. "Listen")' }),
